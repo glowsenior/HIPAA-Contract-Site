@@ -24,7 +24,7 @@ export const ContractProvider = ({ children }) => {
       if (filters.page) params.append('page', filters.page);
       if (filters.limit) params.append('limit', filters.limit);
 
-      const response = await axios.get(`http://5.196.110.210:5000/api/contracts?${params}`);
+      const response = await axios.get(`/api/contracts?${params}`);
       setContracts(response.data.contracts);
       return response.data;
     } catch (error) {
@@ -38,7 +38,7 @@ export const ContractProvider = ({ children }) => {
   const fetchContract = async (id) => {
     setLoading(true);
     try {
-      const response = await axios.get(`http://5.196.110.210:5000/api/contracts/${id}`);
+      const response = await axios.get(`/api/contracts/${id}`);
       setCurrentContract(response.data.contract);
       return response.data.contract;
     } catch (error) {
@@ -51,7 +51,7 @@ export const ContractProvider = ({ children }) => {
 
   const createContract = async (contractData) => {
     try {
-      const response = await axios.post('http://5.196.110.210:5000/api/contracts', contractData);
+      const response = await axios.post('/api/contracts', contractData);
       const newContract = response.data.contract;
       setContracts(prev => [newContract, ...prev]);
       return { success: true, contract: newContract };
@@ -65,7 +65,7 @@ export const ContractProvider = ({ children }) => {
 
   const updateContract = async (id, contractData) => {
     try {
-      const response = await axios.put(`http://5.196.110.210:5000/api/contracts/${id}`, contractData);
+      const response = await axios.put(`/api/contracts/${id}`, contractData);
       const updatedContract = response.data.contract;
       
       setContracts(prev => 
@@ -89,7 +89,7 @@ export const ContractProvider = ({ children }) => {
 
   const deleteContract = async (id) => {
     try {
-      await axios.delete(`http://5.196.110.210:5000/api/contracts/${id}`);
+      await axios.delete(`/api/contracts/${id}`);
       setContracts(prev => prev.filter(contract => contract._id !== id));
       
       if (currentContract && currentContract._id === id) {
@@ -107,7 +107,7 @@ export const ContractProvider = ({ children }) => {
 
   const updateContractStatus = async (id, status) => {
     try {
-      const response = await axios.post(`http://5.196.110.210:5000/api/contracts/${id}/status`, { status });
+      const response = await axios.post(`/api/contracts/${id}/status`, { status });
       const updatedContract = response.data.contract;
       
       setContracts(prev => 
@@ -131,7 +131,7 @@ export const ContractProvider = ({ children }) => {
 
   const addContractMessage = async (id, message) => {
     try {
-      const response = await axios.post(`http://5.196.110.210:5000/api/contracts/${id}/message`, { message });
+      const response = await axios.post(`/api/contracts/${id}/message`, { message });
       const updatedContract = response.data.contract;
       
       setContracts(prev => 
@@ -160,7 +160,7 @@ export const ContractProvider = ({ children }) => {
       formData.append('contractId', contractId);
       formData.append('documentType', documentType);
 
-      const response = await axios.post('http://5.196.110.210:5000/api/documents/upload', formData, {
+      const response = await axios.post('/api/documents/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -180,7 +180,7 @@ export const ContractProvider = ({ children }) => {
 
   const downloadDocument = async (documentId) => {
     try {
-      const response = await axios.get(`http://5.196.110.210:5000/api/documents/${documentId}/download`, {
+      const response = await axios.get(`/api/documents/${documentId}/download`, {
         responseType: 'blob',
       });
 
@@ -212,7 +212,7 @@ export const ContractProvider = ({ children }) => {
 
   const deleteDocument = async (documentId) => {
     try {
-      await axios.delete(`http://5.196.110.210:5000/api/documents/${documentId}`);
+      await axios.delete(`/api/documents/${documentId}`);
       
       // Refresh the current contract if it's loaded
       if (currentContract) {

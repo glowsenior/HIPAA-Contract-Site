@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
     const checkAuth = async () => {
       if (token) {
         try {
-          const response = await axios.get('http://5.196.110.210:5000/api/auth/me');
+          const response = await axios.get('/api/auth/me');
           setUser(response.data.user);
         } catch (error) {
           console.error('Auth check failed:', error);
@@ -46,7 +46,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await axios.post('http://5.196.110.210:5000/api/auth/login', { email, password });
+      const response = await axios.post('/api/auth/login', { email, password });
       const { token: newToken, user: userData } = response.data;
       
       localStorage.setItem('token', newToken);
@@ -64,7 +64,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (userData) => {
     try {
-      const response = await axios.post('http://5.196.110.210:5000/api/auth/register', userData);
+      const response = await axios.post('/api/auth/register', userData);
       const { token: newToken, user: newUser } = response.data;
       
       localStorage.setItem('token', newToken);
@@ -89,7 +89,7 @@ export const AuthProvider = ({ children }) => {
 
   const updateProfile = async (profileData) => {
     try {
-      const response = await axios.put('http://5.196.110.210:5000/api/auth/profile', profileData);
+      const response = await axios.put('/api/auth/profile', profileData);
       setUser(response.data.user);
       return { success: true };
     } catch (error) {

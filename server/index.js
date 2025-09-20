@@ -3,6 +3,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
+const path = require('path');
 require('dotenv').config();
 
 const authRoutes = require('./routes/auth');
@@ -38,6 +39,9 @@ app.use('/uploads', express.static('uploads'));
 // Additional static route for documents
 app.use('/api/documents/static', express.static('uploads'));
 
+// Serve static files from React build
+app.use(express.static('public'));
+
 // Database connection
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/medical-contracts', {
   useNewUrlParser: true,
@@ -65,9 +69,9 @@ app.use((err, req, res, next) => {
   });
 });
 
-// 404 handler
-app.use('*', (req, res) => {
-  res.status(404).json({ message: 'Route not found' });
+// Serve React app for client-side routing
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.listen(PORT, () => {

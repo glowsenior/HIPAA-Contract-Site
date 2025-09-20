@@ -8,6 +8,8 @@
     "server": "cd server && npm run dev",
     "client": "cd client && npm start",
     "build": "cd client && npm run build",
+    "build:production": "node build-production.js",
+    "start:production": "cd server && npm start",
     "install-all": "npm install && cd server && npm install && cd ../client && npm install"
   },
   "keywords": ["medical", "contract", "development", "fullstack"],
