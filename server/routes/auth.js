@@ -85,15 +85,29 @@ router.post('/login', [
 
     const { email, password } = req.body;
 
-    // Find user by email
-    const user = await User.findOne({ email });
+    // Debug logging
+    console.log('Login attempt for email:', email);
+    console.log('Password provided:', password ? 'Yes' : 'No');
+
+    // Find user by email (include password field)
+    const user = await User.findOne({ email }).select('+password');
     if (!user) {
+      console.log('User not found for email:', email);
       return res.status(401).json({ message: 'Invalid credentials' });
     }
 
+    console.log('User found:', user.email);
+    console.log('User has password:', user.password ? 'Yes' : 'No');
+    console.log('Password length:', user.password ? user.password.length : 0);
+
     // Check password
-    const isMatch = await user.comparePassword(password);
-    if (!isMatch) {
+    try {
+      const isMatch = await user.comparePassword(password);
+      if (!isMatch) {
+        return res.status(401).json({ message: 'Invalid credentials' });
+      }
+    } catch (error) {
+      console.error('Password comparison error:', error);
       return res.status(401).json({ message: 'Invalid credentials' });
     }
 

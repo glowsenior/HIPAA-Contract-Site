@@ -22,7 +22,8 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
-    minlength: 6
+    minlength: 6,
+    select: false // Don't include password by default in queries
   },
   role: {
     type: String,
@@ -64,6 +65,12 @@ userSchema.pre('save', async function(next) {
 
 // Compare password method
 userSchema.methods.comparePassword = async function(candidatePassword) {
+  if (!candidatePassword) {
+    throw new Error('Password is required');
+  }
+  if (!this.password) {
+    throw new Error('User password not found');
+  }
   return bcrypt.compare(candidatePassword, this.password);
 };
 
