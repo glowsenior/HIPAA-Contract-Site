@@ -88,13 +88,13 @@ const ContractDetails = () => {
       if (currentContract.dlFront) {
         // Handle both populated objects and ObjectIds
         const dlFrontId = currentContract.dlFront._id || currentContract.dlFront;
-        const dlFrontUrl = `/api/documents/public/${dlFrontId}`;
+        const dlFrontUrl = `http://5.196.110.210:5000/api/documents/public/${dlFrontId}`;
         setDlFrontPreview(dlFrontUrl);
       }
       if (currentContract.dlBack) {
         // Handle both populated objects and ObjectIds
         const dlBackId = currentContract.dlBack._id || currentContract.dlBack;
-        const dlBackUrl = `/api/documents/public/${dlBackId}`;
+        const dlBackUrl = `http://5.196.110.210:5000/api/documents/public/${dlBackId}`;
         setDlBackPreview(dlBackUrl);
       }
     }
