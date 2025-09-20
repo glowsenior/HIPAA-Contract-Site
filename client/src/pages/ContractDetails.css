@@ -1,0 +1,486 @@
+/* Medical-themed Contract Details with Ant Design */
+.contract-details {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding: 24px;
+}
+
+.contract-details-loading,
+.contract-details-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 16px;
+}
+
+.contract-header {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  margin-bottom: 24px;
+  padding: 24px;
+}
+
+.contract-header-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.back-button {
+  border-radius: 8px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contract-title-section {
+  flex: 1;
+}
+
+.contract-title {
+  color: #262626 !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  margin-bottom: 16px !important;
+}
+
+.contract-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.contract-content {
+  margin-bottom: 24px;
+}
+
+/* Card Styles */
+.info-card,
+.parties-card,
+.milestones-card,
+.requirements-card,
+.documents-card,
+.status-card,
+.communication-card {
+  border-radius: 12px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+  border: 1px solid #f0f0f0 !important;
+}
+
+.info-card .ant-card-head,
+.parties-card .ant-card-head,
+.milestones-card .ant-card-head,
+.requirements-card .ant-card-head,
+.documents-card .ant-card-head,
+.status-card .ant-card-head,
+.communication-card .ant-card-head {
+  border-bottom: 1px solid #f0f0f0 !important;
+  padding: 16px 24px !important;
+}
+
+.info-card .ant-card-body,
+.parties-card .ant-card-body,
+.milestones-card .ant-card-body,
+.requirements-card .ant-card-body,
+.documents-card .ant-card-body,
+.status-card .ant-card-body,
+.communication-card .ant-card-body {
+  padding: 24px !important;
+}
+
+/* Contract Description */
+.contract-description {
+  margin-top: 16px;
+}
+
+.contract-description .ant-typography {
+  color: #8c8c8c !important;
+  line-height: 1.6 !important;
+}
+
+/* Parties Information */
+.party-info {
+  padding: 16px;
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+}
+
+.party-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: #1890ff;
+}
+
+.party-details .ant-typography {
+  margin-bottom: 8px !important;
+}
+
+.party-details .ant-typography:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Milestones */
+.milestone-content {
+  padding-left: 8px;
+}
+
+.milestone-content .ant-typography {
+  margin-bottom: 8px !important;
+}
+
+.milestone-content .ant-typography:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* DL Upload Section */
+.dl-upload-section {
+  margin-bottom: 24px;
+}
+
+.dl-upload-zone {
+  border: 2px dashed #d9d9d9;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dl-upload-zone:hover {
+  border-color: #1890ff;
+  background: #f0f9ff;
+}
+
+.dl-preview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.dl-preview-image {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.remove-preview {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-label {
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.upload-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #8c8c8c;
+  cursor: pointer;
+}
+
+.upload-placeholder:hover {
+  color: #1890ff;
+}
+
+.upload-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #ff4d4f;
+  padding: 16px;
+}
+
+.upload-error .ant-typography {
+  margin: 0 !important;
+  font-size: 12px;
+}
+
+/* Document List */
+.document-list {
+  margin-top: 16px;
+}
+
+.document-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #fafafa;
+  border-radius: 6px;
+  border: 1px solid #f0f0f0;
+}
+
+.document-name {
+  flex: 1;
+  font-size: 14px;
+}
+
+/* Communication */
+.message-item {
+  padding: 12px;
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+}
+
+.message-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.message-content {
+  margin: 0 !important;
+  color: #262626 !important;
+  font-size: 14px !important;
+}
+
+/* Status Actions */
+.status-card .ant-btn {
+  border-radius: 8px;
+  height: 40px;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contract-details {
+    padding: 16px;
+  }
+  
+  .contract-header {
+    padding: 16px;
+  }
+  
+  .contract-header-content {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .contract-title {
+    font-size: 24px !important;
+  }
+  
+  .contract-meta {
+    flex-wrap: wrap;
+  }
+  
+  .info-card .ant-card-body,
+  .parties-card .ant-card-body,
+  .milestones-card .ant-card-body,
+  .requirements-card .ant-card-body,
+  .documents-card .ant-card-body,
+  .status-card .ant-card-body,
+  .communication-card .ant-card-body {
+    padding: 16px !important;
+  }
+  
+  .dl-upload-zone {
+    min-height: 100px;
+    padding: 12px;
+  }
+  
+  .dl-preview-image {
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contract-details {
+    padding: 12px;
+  }
+  
+  .contract-header {
+    padding: 12px;
+  }
+  
+  .contract-title {
+    font-size: 20px !important;
+  }
+  
+  .party-info {
+    padding: 12px;
+  }
+  
+  .dl-upload-zone {
+    min-height: 80px;
+    padding: 8px;
+  }
+  
+  .dl-preview-image {
+    height: 60px;
+  }
+  
+  .document-item {
+    padding: 8px;
+    gap: 8px;
+  }
+  
+  .message-item {
+    padding: 8px;
+  }
+}
+
+/* Ant Design overrides */
+.contract-details .ant-card {
+  border-radius: 12px;
+}
+
+.contract-details .ant-btn-primary {
+  background: linear-gradient(135deg, #1890ff 0%, #40a9ff 100%);
+  border: none;
+  box-shadow: 0 2px 8px rgba(24, 144, 255, 0.3);
+}
+
+.contract-details .ant-btn-primary:hover {
+  background: linear-gradient(135deg, #40a9ff 0%, #1890ff 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.4);
+}
+
+.contract-details .ant-tag {
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 2px 8px;
+}
+
+.contract-details .ant-statistic-title {
+  color: #8c8c8c !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+
+.contract-details .ant-statistic-content {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+}
+
+.contract-details .ant-timeline-item-content {
+  margin-left: 8px;
+}
+
+.contract-details .ant-upload {
+  width: 100%;
+}
+
+.contract-details .ant-upload .ant-upload-btn {
+  width: 100%;
+  height: auto;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+/* Medical theme enhancements */
+.contract-header {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid #e6f7ff;
+}
+
+.info-card {
+  border-left: 4px solid #1890ff;
+}
+
+.parties-card {
+  border-left: 4px solid #52c41a;
+}
+
+.milestones-card {
+  border-left: 4px solid #faad14;
+}
+
+.requirements-card {
+  border-left: 4px solid #722ed1;
+}
+
+.documents-card {
+  border-left: 4px solid #13c2c2;
+}
+
+.status-card {
+  border-left: 4px solid #eb2f96;
+}
+
+.communication-card {
+  border-left: 4px solid #fa8c16;
+}
+
+/* Animation effects */
+.info-card,
+.parties-card,
+.milestones-card,
+.requirements-card,
+.documents-card,
+.status-card,
+.communication-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading states */
+.contract-details-loading .ant-spin {
+  color: #1890ff;
+}
+
+.contract-details-loading .ant-typography {
+  color: #8c8c8c;
+  font-size: 16px;
+}
+
+/* Upload states */
+.dl-upload-zone.ant-upload-drag {
+  border: 2px dashed #d9d9d9;
+  background: #fafafa;
+}
+
+.dl-upload-zone.ant-upload-drag:hover {
+  border-color: #1890ff;
+  background: #f0f9ff;
+}
+
+.dl-upload-zone.ant-upload-drag.ant-upload-drag-hover {
+  border-color: #1890ff;
+  background: #e6f7ff;
+}

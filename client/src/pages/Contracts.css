@@ -1,0 +1,360 @@
+/* Medical-themed Contracts page with Ant Design */
+.contracts {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding: 24px;
+}
+
+.contracts-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 16px;
+}
+
+.contracts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.contracts-title {
+  color: #262626 !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  margin-bottom: 8px !important;
+}
+
+.contracts-subtitle {
+  color: #8c8c8c !important;
+  font-size: 16px !important;
+  margin: 0 !important;
+}
+
+/* Stats Section */
+.stats-section {
+  margin-bottom: 32px;
+}
+
+.stat-card {
+  border-radius: 12px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+  border: 1px solid #f0f0f0 !important;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+}
+
+.stat-card .ant-card-body {
+  padding: 24px !important;
+}
+
+.stat-card .ant-statistic-title {
+  color: #8c8c8c !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  margin-bottom: 8px !important;
+}
+
+.stat-card .ant-statistic-content {
+  font-size: 24px !important;
+  font-weight: 600 !important;
+}
+
+/* Filters Card */
+.filters-card {
+  margin-bottom: 24px;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+  border: 1px solid #f0f0f0 !important;
+}
+
+.filters-card .ant-card-body {
+  padding: 24px !important;
+}
+
+/* Contracts Card */
+.contracts-card {
+  border-radius: 12px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+  border: 1px solid #f0f0f0 !important;
+}
+
+.contracts-card .ant-card-body {
+  padding: 0 !important;
+}
+
+/* Table Styles */
+.contracts-table .ant-table-thead > tr > th {
+  background: #fafafa !important;
+  border-bottom: 1px solid #f0f0f0 !important;
+  font-weight: 600 !important;
+  color: #262626 !important;
+  padding: 16px !important;
+}
+
+.contracts-table .ant-table-tbody > tr > td {
+  border-bottom: 1px solid #f5f5f5 !important;
+  padding: 16px !important;
+}
+
+.contracts-table .ant-table-tbody > tr:hover > td {
+  background: #f5f5f5 !important;
+}
+
+.contracts-table .ant-table-tbody > tr.ant-table-row-selected > td {
+  background: #e6f7ff !important;
+}
+
+/* Tag Styles */
+.contracts-table .ant-tag {
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 2px 8px;
+  font-size: 12px;
+}
+
+/* Button Styles */
+.contracts-table .ant-btn {
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.contracts-table .ant-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Pagination Styles */
+.contracts-table .ant-pagination {
+  padding: 16px 24px;
+  background: #fafafa;
+  border-top: 1px solid #f0f0f0;
+}
+
+.contracts-table .ant-pagination-item {
+  border-radius: 6px;
+}
+
+.contracts-table .ant-pagination-item-active {
+  background: #1890ff;
+  border-color: #1890ff;
+}
+
+/* Empty State */
+.contracts-card .ant-empty {
+  padding: 48px 24px;
+}
+
+.contracts-card .ant-empty-description {
+  color: #8c8c8c;
+  font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contracts {
+    padding: 16px;
+  }
+  
+  .contracts-header {
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 16px;
+  }
+  
+  .contracts-title {
+    font-size: 24px !important;
+  }
+  
+  .contracts-subtitle {
+    font-size: 14px !important;
+  }
+  
+  .stats-section {
+    margin-bottom: 24px;
+  }
+  
+  .filters-card .ant-card-body {
+    padding: 16px !important;
+  }
+  
+  .contracts-table .ant-table-thead > tr > th,
+  .contracts-table .ant-table-tbody > tr > td {
+    padding: 12px 8px !important;
+    font-size: 12px;
+  }
+  
+  .contracts-table .ant-table-tbody > tr > td:first-child {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contracts {
+    padding: 12px;
+  }
+  
+  .contracts-header {
+    padding: 16px 12px;
+  }
+  
+  .contracts-title {
+    font-size: 20px !important;
+  }
+  
+  .stat-card .ant-card-body {
+    padding: 16px !important;
+  }
+  
+  .filters-card .ant-card-body {
+    padding: 12px !important;
+  }
+  
+  .contracts-table .ant-table-thead > tr > th,
+  .contracts-table .ant-table-tbody > tr > td {
+    padding: 8px 4px !important;
+    font-size: 11px;
+  }
+  
+  .contracts-table .ant-table-tbody > tr > td:first-child {
+    font-size: 12px;
+  }
+}
+
+/* Ant Design overrides */
+.contracts .ant-card {
+  border-radius: 12px;
+}
+
+.contracts .ant-btn-primary {
+  background: linear-gradient(135deg, #1890ff 0%, #40a9ff 100%);
+  border: none;
+  box-shadow: 0 2px 8px rgba(24, 144, 255, 0.3);
+}
+
+.contracts .ant-btn-primary:hover {
+  background: linear-gradient(135deg, #40a9ff 0%, #1890ff 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.4);
+}
+
+.contracts .ant-input-affix-wrapper {
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
+}
+
+.contracts .ant-input-affix-wrapper:hover {
+  border-color: #40a9ff;
+}
+
+.contracts .ant-input-affix-wrapper:focus,
+.contracts .ant-input-affix-wrapper-focused {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.contracts .ant-select {
+  border-radius: 8px;
+}
+
+.contracts .ant-select:hover {
+  border-color: #40a9ff;
+}
+
+.contracts .ant-select-focused {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.contracts .ant-table {
+  border-radius: 8px;
+}
+
+.contracts .ant-table-thead > tr > th {
+  border-radius: 0;
+}
+
+.contracts .ant-table-tbody > tr:first-child > td {
+  border-top: none;
+}
+
+/* Medical theme enhancements */
+.contracts-header {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid #e6f7ff;
+}
+
+.stat-card:nth-child(1) {
+  border-left: 4px solid #1890ff;
+}
+
+.stat-card:nth-child(2) {
+  border-left: 4px solid #8c8c8c;
+}
+
+.stat-card:nth-child(3) {
+  border-left: 4px solid #1890ff;
+}
+
+.stat-card:nth-child(4) {
+  border-left: 4px solid #52c41a;
+}
+
+/* Animation effects */
+.stat-card,
+.filters-card,
+.contracts-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading states */
+.contracts-loading .ant-spin {
+  color: #1890ff;
+}
+
+.contracts-loading .ant-typography {
+  color: #8c8c8c;
+  font-size: 16px;
+}
+
+/* Table row hover effects */
+.contracts-table .ant-table-tbody > tr {
+  transition: all 0.3s ease;
+}
+
+.contracts-table .ant-table-tbody > tr:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Selection styles */
+.contracts-table .ant-table-tbody > tr.ant-table-row-selected {
+  background: #e6f7ff !important;
+  border-left: 3px solid #1890ff;
+}
+
+.contracts-table .ant-table-tbody > tr.ant-table-row-selected:hover {
+  background: #bae7ff !important;
+}

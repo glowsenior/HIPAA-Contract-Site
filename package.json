@@ -1,0 +1,19 @@
+{
+  "name": "medical-contract-builder",
+  "version": "1.0.0",
+  "description": "A comprehensive contract-building website for medical website development",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install"
+  },
+  "keywords": ["medical", "contract", "development", "fullstack"],
+  "author": "Medical Contract Builder",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

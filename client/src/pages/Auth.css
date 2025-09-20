@@ -1,0 +1,333 @@
+/* Medical-themed Auth pages with Ant Design */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+}
+
+.auth-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
+}
+
+.auth-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 480px;
+  padding: 24px;
+}
+
+.auth-card {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(20px);
+  border-radius: 16px !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  padding: 0 !important;
+}
+
+.auth-header {
+  text-align: center;
+  padding: 40px 32px 32px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.auth-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #1890ff 0%, #40a9ff 100%);
+  border-radius: 16px;
+  margin-bottom: 24px;
+  color: white;
+  box-shadow: 0 8px 16px rgba(24, 144, 255, 0.3);
+}
+
+.auth-title {
+  color: #262626 !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  margin-bottom: 8px !important;
+}
+
+.auth-subtitle {
+  color: #8c8c8c !important;
+  font-size: 16px !important;
+  margin: 0 !important;
+}
+
+.auth-form {
+  padding: 32px;
+}
+
+.auth-input {
+  border-radius: 8px !important;
+  border: 1px solid #d9d9d9 !important;
+  padding: 12px 16px !important;
+  font-size: 16px !important;
+  transition: all 0.3s ease !important;
+}
+
+.auth-input:hover {
+  border-color: #40a9ff !important;
+}
+
+.auth-input:focus,
+.auth-input.ant-input-focused {
+  border-color: #1890ff !important;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2) !important;
+}
+
+.auth-select {
+  border-radius: 8px !important;
+  border: 1px solid #d9d9d9 !important;
+}
+
+.auth-select:hover {
+  border-color: #40a9ff !important;
+}
+
+.auth-submit {
+  background: linear-gradient(135deg, #1890ff 0%, #40a9ff 100%) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  height: 48px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.auth-submit:hover {
+  background: linear-gradient(135deg, #40a9ff 0%, #1890ff 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(24, 144, 255, 0.4) !important;
+}
+
+.auth-submit:active {
+  transform: translateY(0) !important;
+}
+
+.auth-divider {
+  margin: 24px 0 !important;
+  color: #8c8c8c !important;
+}
+
+.auth-footer {
+  padding: 0 32px 32px;
+}
+
+.auth-register-btn,
+.auth-login-btn {
+  border-radius: 8px !important;
+  height: 48px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  border: 1px solid #d9d9d9 !important;
+  background: white !important;
+  color: #1890ff !important;
+  transition: all 0.3s ease !important;
+}
+
+.auth-register-btn:hover,
+.auth-login-btn:hover {
+  border-color: #1890ff !important;
+  color: #1890ff !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.15) !important;
+}
+
+.auth-features {
+  padding: 24px 32px 32px;
+  border-top: 1px solid #f0f0f0;
+  background: #fafafa;
+  border-radius: 0 0 16px 16px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #8c8c8c;
+  font-size: 14px;
+}
+
+.feature-item svg {
+  color: #1890ff;
+}
+
+/* Form overrides */
+.auth-form .ant-form-item-label > label {
+  color: #262626 !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+}
+
+.auth-form .ant-form-item {
+  margin-bottom: 24px !important;
+}
+
+.auth-form .ant-input-prefix {
+  color: #8c8c8c !important;
+  margin-right: 8px !important;
+}
+
+.auth-form .ant-form-item-explain-error {
+  color: #ff4d4f !important;
+  font-size: 12px !important;
+  margin-top: 4px !important;
+}
+
+.auth-form .ant-form-item-has-error .ant-input {
+  border-color: #ff4d4f !important;
+}
+
+.auth-form .ant-form-item-has-error .ant-input:focus {
+  border-color: #ff4d4f !important;
+  box-shadow: 0 0 0 2px rgba(255, 77, 79, 0.2) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .auth-content {
+    padding: 16px;
+  }
+  
+  .auth-card {
+    border-radius: 12px !important;
+  }
+  
+  .auth-header {
+    padding: 32px 24px 24px;
+  }
+  
+  .auth-form {
+    padding: 24px;
+  }
+  
+  .auth-footer {
+    padding: 0 24px 24px;
+  }
+  
+  .auth-features {
+    padding: 20px 24px 24px;
+  }
+  
+  .auth-title {
+    font-size: 24px !important;
+  }
+  
+  .auth-subtitle {
+    font-size: 14px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-content {
+    padding: 12px;
+  }
+  
+  .auth-header {
+    padding: 24px 20px 20px;
+  }
+  
+  .auth-form {
+    padding: 20px;
+  }
+  
+  .auth-footer {
+    padding: 0 20px 20px;
+  }
+  
+  .auth-features {
+    padding: 16px 20px 20px;
+  }
+  
+  .auth-logo {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .auth-title {
+    font-size: 20px !important;
+  }
+}
+
+/* Ant Design specific overrides */
+.auth-container .ant-card {
+  border-radius: 16px;
+}
+
+.auth-container .ant-btn {
+  border-radius: 8px;
+}
+
+.auth-container .ant-input {
+  border-radius: 8px;
+}
+
+.auth-container .ant-select {
+  border-radius: 8px;
+}
+
+.auth-container .ant-divider {
+  border-color: #f0f0f0;
+}
+
+/* Loading states */
+.auth-submit .ant-spin {
+  color: white;
+}
+
+/* Animation effects */
+.auth-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Medical theme enhancements */
+.auth-logo {
+  background: linear-gradient(135deg, #1890ff 0%, #40a9ff 100%);
+}
+
+.auth-submit {
+  background: linear-gradient(135deg, #1890ff 0%, #40a9ff 100%);
+}
+
+.auth-register-btn:hover,
+.auth-login-btn:hover {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e6f7ff 100%);
+}
